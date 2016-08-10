@@ -23,30 +23,29 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-//洗牌算法
 - (void)mixed:(NSMutableArray *)array{
     for (NSInteger i = 0; i < array.count - 1; i ++) {
         id temp = array[i];
 //        NSInteger j = [self chooseIndexForI:i by:array.count];
-        NSInteger j = random()%array.count;
+        NSInteger j = arc4random()%array.count;
         array[i] = array[j];
         array[j] = temp;
     }
 }
 
-- (NSInteger)chooseIndexForI:(NSInteger)I by:(NSInteger)count{
+//- (NSInteger)chooseIndexForI:(NSInteger)I by:(NSInteger)count{
     //NSInteger j = rand()%(count - 1);
     //if (j - I > 2 ||j - I < -2) {
      //   return j;
     //}else{
       //  [self chooseIndexForI:I by:count];
     //}
-    NSInteger j;
-    do {
-        j = arc4random()%(count);
-    } while (j - I < 2 ||j - I > 2);
-    return j;
-}
+//    NSInteger j;
+//    do {
+//        j = arc4random()%(count);
+//    } while (j - I < 2 ||j - I > 2);
+//    return j;
+//}
 
 
 
